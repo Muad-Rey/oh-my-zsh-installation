@@ -12,4 +12,3 @@ sed -i 's/^plugins=.*/plugins=(git extract sudo thefuck autojump jsontools color
 # Install powerlevel10k and configure it.
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM}"/themes/powerlevel10k
 sed -i 's/^ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/g' ~/.zshrc
-exec zsh
