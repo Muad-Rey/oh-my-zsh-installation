@@ -14,3 +14,6 @@ sed -i 's/^plugins=.*/plugins=(git\n extract\n sudo\n autojump\n jsontools\n col
 # Install powerlevel10k and configure it.
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM}"/themes/powerlevel10k
 sed -i 's/^ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/g' ~/.zshrc
+
+
+sed -i -e '/source \$ZSH\/oh-my-zsh.sh/i export ZSH_COMPDUMP=\$ZSH\/cache\/.zcompdump-\$HOST' ~/.zshrc
