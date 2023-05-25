@@ -1,6 +1,7 @@
 # Description
 
 ## zsh.sh
+> Depends on the apt package manager
 
 Zsh configured with the following plugins and a powerlevel10k theme.
 
