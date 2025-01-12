@@ -1,3 +1,5 @@
+### install script
+curl -sL https://raw.githubusercontent.com/aiktb/dotzsh/master/zsh.sh | bash && zsh
 # Description
 
 ## zsh.sh
