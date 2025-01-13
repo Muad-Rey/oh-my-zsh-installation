@@ -1,10 +1,13 @@
 ### install script
-curl -sL https://raw.githubusercontent.com/aiktb/dotzsh/master/zsh.sh | bash && zsh
+> curl -sL https://raw.githubusercontent.com/aiktb/dotzsh/master/zsh.sh | bash && zsh
 # Description
 
 ## zsh.sh
 > Depends on the apt package manager
-
+## install these two plugins 
+https://github.com/zsh-users/zsh-history-substring-search
+https://github.com/MichaelAquilina/zsh-you-should-use
+sudo apt install thefuck
 Zsh configured with the following plugins and a powerlevel10k theme.
 
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
