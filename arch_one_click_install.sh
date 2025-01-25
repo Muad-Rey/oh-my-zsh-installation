@@ -3,7 +3,7 @@
 
 #!/bin/bash
 
-sudo apt install zsh -y
+sudo pacman -S --noconfirm zsh -y
 # Install oh-my-zsh.
 sh 0>/dev/null -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
