@@ -54,7 +54,14 @@ echo "Logout & Login if don't see zsh as default shell."
 sed  -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ~/.zshrc
 
 # Install powerline font
-sudo pacman -S --noconfirm fonts-powerline
+# sudo pacman -S --noconfirm fonts-powerline
+
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+./fonts/install.sh
+# clean-up a bit
+rm -rf fonts
 
 # Install powerlevel10k
 sudo rm -R ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
