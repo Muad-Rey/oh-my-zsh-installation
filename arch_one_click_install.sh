@@ -1,9 +1,6 @@
 #!/bin/bash
 
-
-#!/bin/bash
-
-sudo pacman -S --noconfirm zsh -y
+sudo pacman -Sy --noconfirm zsh
 # Install oh-my-zsh.
 sh 0>/dev/null -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
@@ -12,7 +9,7 @@ export ZSH_CUSTOM
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM}"/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions.git "${ZSH_CUSTOM}"/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-history-substring-search "${ZSH_CUSTOM}"/plugins/zsh-history-substring-search
-sudo apt install thefuck autojump -y
+sudo pacman -Sy --noconfirm thefuck autojump 
 sed -i 's/^plugins=.*/plugins=(git\n extract\n thefuck\n autojump\n jsontools\n colored-man-pages\n zsh-autosuggestions\n zsh-syntax-highlighting\n zsh-history-substring-search\n you-should-use\n nvm\n debian)/g' ~/.zshrc
 # Enable nvm plugin feature to automatically read `.nvmrc` to toggle node version.
 sed -i '1s/^/zstyle ':omz:plugins:nvm' autoload yes\n/' ~/.zshrc
@@ -27,9 +24,6 @@ sudo cp ~/.zshrc /etc/skel/
 sudo cp -r ~/.oh-my-zsh /etc/skel/
 sudo chmod -R 755 /etc/skel/
 sudo chown -R root:root /etc/skel/
-
-#Install zsh
-#sudo pacman -S --noconfirm zsh
 
 # Show version
 zsh --version
@@ -54,7 +48,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 sed  -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ~/.zshrc
 
 # Install powerline font
-sudo apt-get install fonts-powerline -y
+sudo pacman -Sy --noconfirm fonts-powerline
 
 # Install powerlevel10k
 sudo rm -R ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
