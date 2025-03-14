@@ -1,8 +1,5 @@
 #!/bin/bash
 
-
-#!/bin/bash
-
 sudo pacman -S --noconfirm zsh -y
 # Install oh-my-zsh.
 sh 0>/dev/null -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -12,7 +9,7 @@ export ZSH_CUSTOM
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM}"/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions.git "${ZSH_CUSTOM}"/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-history-substring-search "${ZSH_CUSTOM}"/plugins/zsh-history-substring-search
-sudo apt install thefuck autojump -y
+# sudo pacman -S --noconfirm thefuck autojump
 sed -i 's/^plugins=.*/plugins=(git\n extract\n thefuck\n autojump\n jsontools\n colored-man-pages\n zsh-autosuggestions\n zsh-syntax-highlighting\n zsh-history-substring-search\n you-should-use\n nvm\n debian)/g' ~/.zshrc
 # Enable nvm plugin feature to automatically read `.nvmrc` to toggle node version.
 sed -i '1s/^/zstyle ':omz:plugins:nvm' autoload yes\n/' ~/.zshrc
@@ -75,10 +72,17 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-$HO
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
+git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/you-should-use
 
+git clone https://github.com/wting/autojump.git
+./autojump/install.py
+rm -rf autojump
 # Enable plugins
 sed  -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/g' ~/.zshrc
 
+sudo pacman -S --noconfirm python-pip
+pip install thefuck --break-system-packages  
+mv .zsh_history history && mv .zhistory .zsh_history && cat history >> .zsh_history && rm -rf history
 echo "Successfully Installed. Start new terminal and configure powerlevel10k."
 echo "If p10k configuration wizard does not start automatically, run following"
 echo "p10k configure"
